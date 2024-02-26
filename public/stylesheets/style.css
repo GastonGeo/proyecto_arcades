@@ -31,6 +31,8 @@ html {
   color: beige;
 }
 
+
+
 .tapaTorneo {
   background: url(/images/daytona.jpg);   
   background-size: cover;
@@ -43,6 +45,14 @@ html {
   background: url(/images/arcade4.jpg);   
   background-size: cover;
   height: 0.5vh;
+  min-height: 600px;
+  color: beige;
+}
+
+.tapaLogin {
+  background: url(/images/arcadelogin.jpg);   
+  background-size: cover;
+  height: 100vh;
   min-height: 600px;
   color: beige;
 }
