@@ -108,12 +108,10 @@
                 <li><a href="/torneo" target="_blank" data-bs-toggle="modal" data-bs-target="#modalTorneo"><img
                             src="/images/arcade2.jpg">
                         Próximo torneo</a></li>
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/images/arcade3.jpg">
-                        Ahora podés lorem</a></li>
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/images/arcade4.jpg">
-                        Ultimos días para seguirnos!</a></li>
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/images/arcade5.jpg">
-                        Novedad numero 5</a></li>
+                {{#each listado}}
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}"><img src="/images/arcade5.jpg">
+                        {{titulo}}</a></li>
+                {{/each}}
             </ul>
 
         </div>
@@ -171,26 +169,17 @@
 
 
         <!-- Modal normal-->
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        {{#each listado}}
+        <div class="modal fade" id="exampleModal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Novedad!</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{titulo}}</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <h6>Acá irían las novedades Lorem ipsum dolor sit amet consectetur
-                            adipisicing
-                            elit. Tempora labore nobis dolorum officia hic, impedit ipsam tenetur doloremque
-                            totam
-                            architecto, est nam autem aliquid, facere eveniet quod quam reprehenderit quasi.
-                            Lorem ipsum
-                            dolor sit amet consectetur adipisicing elit. Dolores voluptatem placeat sunt quam
-                            laudantium
-                            soluta eveniet commodi inventore, numquam quis, ipsum voluptatibus magnam laborum.
-                            Earum
-                            fugit doloremque rerum numquam sapiente!</h6>
+                        <h4>{{subtitulo}}</h4>
+                        <p>{{cuerpo}}</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -199,6 +188,7 @@
                 </div>
             </div>
         </div> <!-- acá termina el modal y empieza testimonios-->
+        {{/each}}
     </div>
 
 </div>

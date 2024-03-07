@@ -1,12 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
+const listadoModel = require('../models/listadoModel'); 
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Arcade House' });
+router.get('/', async function(req, res, next) {
+  const listado = await listadoModel.getListado(); 
+  res.render('index', { listado });
 });
+
+
+ 
+
+
 
 router.post('/', async (req, res, next) => {
 

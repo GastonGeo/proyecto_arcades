@@ -3,11 +3,59 @@
         <div class="col">
             <p class="text-center">
                 <span>Hola {{usuario}}!</span>
-                <a href="/admin/login/logout" class="btn btn-danger">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a>
+                <a href="/admin/login/logout" class="btn btn-danger">Cerrar sesión <i
+                        class="fas fa-sign-out-alt"></i></a>
 
             </p>
 
         </div>
     </div>
+
+    {{!-- inicio fila 2 --}}
+
+    <div class="row">
+        <div class="col-7" style="margin-top: -9px;">
+            <h2>Listado de novedades</h2>
+        </div>
+        <div class="col-5 text-right">
+            <a href="" class="btn btn-success"><i class="fas fa-plus"></i>Nuevo</a>
+        </div>
+    </div>
+    {{!-- fin fila 2 --}}
+
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Título</th>
+                        <th scope="col" class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {{#each listado}}
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{titulo}}</td>
+                        <td class="text-center">
+                            <a href="#" title="Editar" class="btn btn-sm btn-secondary">
+                                <i class="fa fa-pencil"></i></a>
+                            <a href="/admin/listado/eliminar/{{id}}" title="Eliminar" class="btn btn-sm btn-secondary">
+                                <i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+
+
+
 
 </div>
