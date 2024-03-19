@@ -2,11 +2,32 @@ const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
 const listadoModel = require('../models/listadoModel'); 
-
+const cloudinary = require('cloudinary').v2;
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-  const listado = await listadoModel.getListado(); 
+  var listado = await listadoModel.getListado();
+
+    
+    listado = listado.map(novedad => {
+        if (novedad.img_id) {
+            var imagen = cloudinary.image(novedad.img_id, {
+                width: 400,
+                height: 400,
+                crop: 'fill'
+            });
+            return {
+                ...novedad,
+                imagen
+            }
+        } else {
+            return {
+                ...novedad,
+                imagen:  '<img src="/images/noimage.jpg" style="max-width: 200px; max-height: 200px;">' 
+            }
+        }
+    });
+    listado = listado.slice(0,5); //selecciona los primeros 5 elementos del array
   res.render('index', { listado });
 });
 

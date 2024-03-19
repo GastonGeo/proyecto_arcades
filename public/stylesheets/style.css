@@ -15,7 +15,8 @@ footer {
   background-color: grey;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: 'Roboto Slab', serif;
 }
 
@@ -23,8 +24,11 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
+
 .tapa {
-  background: url(/images/arcade1.jpg);   
+  background: url(/images/arcade1.jpg);
   background-size: cover;
   height: 0.5vh;
   min-height: 600px;
@@ -32,25 +36,24 @@ html {
 }
 
 
-
 .tapaTorneo {
-  background: url(/images/daytona.jpg);   
+  background: url(/images/daytona.jpg);
   background-size: cover;
-  height: 0.5vh;
+  height: 100vh;
   min-height: 600px;
   color: beige;
 }
 
 .tapaNovedades {
-  background: url(/images/arcade4.jpg);   
+  background: url(/images/arcade4.jpg);
   background-size: cover;
-  height: 0.5vh;
+  height: 100vh;
   min-height: 600px;
   color: beige;
 }
 
 .tapaLogin {
-  background: url(/images/arcadelogin.jpg);   
+  background: url(/images/arcadelogin.jpg);
   background-size: cover;
   height: 100vh;
   min-height: 600px;
@@ -63,14 +66,14 @@ html {
   top: 10px;
   left: 50px;
   color: white;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   max-width: 80%;
   text-align: end;
 }
 
 .testimonios {
-  filter: grayscale(100%)
+  filter: grayscale(50%)
 }
 
 .partegrid {
@@ -78,7 +81,7 @@ html {
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 10px;
-  
+
 }
 
 .marcofoto {
@@ -87,8 +90,8 @@ html {
 }
 
 .nosotros {
-  margin: auto; 
-  padding: 15px;  
+  margin: auto;
+  padding: 15px;
 }
 
 .lista-novedades {
@@ -133,4 +136,15 @@ html {
 
 .scroll-section {
   scroll-margin-top: 60px;
+}
+
+.card-img-top {
+  max-width: 100%; /* Establece el ancho máximo de las imágenes al 100% del contenedor */
+  height: auto; /* Hace que la altura de las imágenes se ajuste automáticamente */
+}
+
+.nosotros .row {
+  flex-wrap: nowrap; /* Evita que las imágenes se desborden hacia abajo */
+  overflow-x: auto; /* Agrega desplazamiento horizontal si el contenido es demasiado ancho */
+  margin-bottom: -20px; /* Ajusta el margen inferior para evitar espacio adicional */
 }

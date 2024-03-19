@@ -1,22 +1,55 @@
+<script>
+    function validarFormulario() {
+        // Obtener el valor del campo de entrada de la imagen
+        var imagen = document.getElementById('imagen').files[0];
+        console.log(imagen); // Imprimir el contenido del campo de entrada de la imagen
+
+        // Verificar si se ha seleccionado un archivo de imagen
+        if (!imagen) {
+            // Si no se ha seleccionado ningún archivo, mostrar un mensaje de error y evitar que el formulario se envíe
+            alert('Por favor selecciona una imagen.');
+            return false; // Evitar el envío del formulario
+        }
+
+        // Si se ha seleccionado un archivo, permitir que el formulario se envíe
+        return true;
+    }
+</script>
+
 <div class="container" style="margin:100px 0">
     <div class="row">
         <div class="col-6 offset-3">
             <h4>Modificar la novedad</h4>
-            <form action="/admin/listado/modificar" method="post">
-            <input type="hidden" value="{{novedad.id}}" name="id">
-            <div class="form-group">
-                <label for="">Título</label>
-                <input type="text" class="form-control" name="titulo" value="{{novedad.titulo}}">
-            </div>
+            <form action="/admin/listado/modificar" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="{{novedad.id}}" name="id">
+                <div class="form-group">
+                    <label for="">Título</label>
+                    <input type="text" class="form-control" name="titulo" value="{{novedad.titulo}}">
+                </div>
 
-            <div class="form-group">
-                <label for="">Subtítulo</label>
-                <input type="text" class="form-control" name="subtitulo" value="{{novedad.subtitulo}}">
-            </div>
-            <div class="form-group">
-                <label for="">Cuerpo</label>
-                <textarea class="form-control" name="cuerpo">{{novedad.cuerpo}} </textarea>
-            </div>
+                <div class="form-group">
+                    <label for="">Subtítulo</label>
+                    <input type="text" class="form-control" name="subtitulo" value="{{novedad.subtitulo}}">
+                </div>
+
+                <div class="form-group">
+                    <p>
+                        <label>Imagen: <input type="file" name="imagen" id="imagen"> </label>
+                    
+                    </p>
+
+
+                    <p>
+                        <label> <input type="checkbox" name="img_delete" id="img_delete" value="1">¿Eliminar imagen
+                            actual?</label>
+                        <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Cuerpo</label>
+                    <textarea class="form-control" name="cuerpo">{{novedad.cuerpo}} </textarea>
+                </div>
                 <button type="submit" class="btn btn-primary"> Modificar </button>
             </form>
             {{#if error}}

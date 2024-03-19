@@ -47,8 +47,7 @@
 
         </div>
     </div>
-
-</div>
+  
 <!--cierra primer contenedor-->
 
 <!--abre grid-->
@@ -65,22 +64,24 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active testimonios">
-                    <img src="/images/arcade2.jpg" class="d-block w-100 marcofoto" alt="...">
-                    <h5 class="texto-superpuesto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat
-                        reiciendis sunt asperiores cum ullam? Illum, nisi laborum. Commodi perferendis possimus
-                        reiciendis beatae. Laboriosam dolorum illo nobis eum at expedita id!</h5>
+                    <img src="/images/palworld.jpg" class="d-block w-100 marcofoto" alt="...">
+                    <h5 class="texto-superpuesto">El colorido juego Palworld del estudio Pocketpair se convirtió en un
+                        gran éxito casi de inmediato, y los desarrolladores presumieron de dos millones de copias
+                        vendidas en las primeras 24 horas.</h5>
                 </div>
                 <div class="carousel-item testimonios">
-                    <img src="/images/arcade3.jpg" class="d-block w-100 marcofoto" alt="...">
-                    <h5 class="texto-superpuesto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat
-                        reiciendis sunt asperiores cum ullam? Illum, nisi laborum. Commodi perferendis possimus
-                        reiciendis beatae. Laboriosam dolorum illo nobis eum at expedita id!</h5>
+                    <img src="/images/arcaderuleta2.jpg" class="d-block w-100 marcofoto" alt="...">
+                    <h5 class="texto-superpuesto">En la creciente escena de las consolas de emulación, la R36s ha
+                        emergido como una opción económica que promete emular hasta la PSP, todo por un precio inferior
+                        a los 50 euros. Este análisis detallado buscará explorar a fondo las características y el
+                        rendimiento de esta consola china.</h5>
                 </div>
                 <div class="carousel-item testimonios">
-                    <img src="/images/arcade4.jpg" class="d-block w-100 marcofoto" alt="...">
-                    <h5 class="texto-superpuesto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat
-                        reiciendis sunt asperiores cum ullam? Illum, nisi laborum. Commodi perferendis possimus
-                        reiciendis beatae. Laboriosam dolorum illo nobis eum at expedita id!</h5>
+                    <img src="/images/arcaderuleta.jpg" class="d-block w-100 marcofoto" alt="...">
+                    <h5 class="texto-superpuesto">En la vasta y enigmática región de Kanto, donde se encuentran ciudades
+                        vibrantes, montañas majestuosas y océanos inexplorados, existen secretos ocultos y leyendas que
+                        han cautivado a los entrenadores de Pokémon durante décadas. Entre estos misterios, hay uno que
+                        destaca por su rareza y fama, y ese es el Pokémon conocido como MissingNo.</h5>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -109,7 +110,8 @@
                             src="/images/arcade2.jpg">
                         Próximo torneo</a></li>
                 {{#each listado}}
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}"><img src="/images/arcade5.jpg">
+                <li><a href="javascript:void(0)" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal{{id}}">{{{imagen}}}
                         {{titulo}}</a></li>
                 {{/each}}
             </ul>
@@ -170,7 +172,8 @@
 
         <!-- Modal normal-->
         {{#each listado}}
-        <div class="modal fade" id="exampleModal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -179,6 +182,7 @@
                     </div>
                     <div class="modal-body">
                         <h4>{{subtitulo}}</h4>
+                        {{{imagen}}}
                         <p>{{cuerpo}}</p>
                     </div>
                     <div class="modal-footer">
@@ -195,15 +199,16 @@
 
 
 
-<div id="nos" class="row nosotros scroll-section" style="background-color: rgb(210, 211, 211);">
     <!-- empieza el div Nosotros-->
 
+
+<div id="nos" class="row nosotros scroll-section" style="background-color: rgb(210, 211, 211);">
     <h1>Nosotros</h1>
 
-    <div class="row">
+    <div class="row justify-content-center">
         <!-- acá las imágenes de Nosotros -->
 
-        <div class="card col-2" style="width: 18rem;  margin: 10px;">
+        <div class="card col-2" style="margin: 10px;">
             <img src="/images/foto1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -211,8 +216,7 @@
                     card's content.</h4>
             </div>
         </div>
-
-        <div class="card col-2" style="width: 18rem;  margin: 10px; ">
+         <div class="card col-2" style="margin: 10px; ">
             <img src="/images/foto2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -221,7 +225,7 @@
             </div>
         </div>
 
-        <div class="card col-2" style="width: 18rem;  margin: 10px;">
+        <div class="card col-2" style="margin: 10px;">
             <img src="/images/foto3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -230,7 +234,7 @@
             </div>
         </div>
 
-        <div class="card col-2" style="width: 18rem;  margin: 10px;">
+        <div class="card col-2" style="margin: 10px;">
             <img src="/images/foto4.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -238,9 +242,10 @@
                     card's content.</h4>
             </div>
         </div>
-
-        <div class="card col-2" style="width: 18rem;  margin: 10px;">
-            <img src="/images/foto1.jpg" class="card-img-top" alt="...">
+       
+    
+         <div class="card col-2" style="margin: 10px;">
+            <img src="/images/modernos.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of
                     the
@@ -248,73 +253,57 @@
             </div>
         </div>
 
-        <div class="card col-2" style="width: 18rem;  margin: 10px;">
-            <img src="/images/foto2.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of
-                    the
-                    card's content.</h4>
-            </div>
-        </div>
 
     </div>
 </div>
 <!--termina div nosotros -->
 
 
-<!-- empieza el div contactanos y ubicacion-->
-<div id="contacto" class="row mb-3 nosotros scroll-section">
+<div id="contacto" class="row mb-3 nosotros scroll-section" style="background-color: rgb(187, 141, 141);">
+    <!-- Formulario -->
+    <form class="col-lg-4 col-md-6 col-sm-12 mb-3" style="background-color: rgb(213, 186, 186);" action="/" method="post">
+        <h2>Contactanos!</h2>
+        <h4>Dejanos tus datos y nos pondremos en contacto</h4>
 
-    <!-- empieza formulario-->
-
-    <form class="col-lg-4 col-md-6 col-sm-12" style="background-color: rgb(187, 141, 141);" action="/" method="post">
-
-        <div class="mb-3" style="margin-left: 10px;">
-            <h2>Contactanos!</h2>
-            <h4>Dejanos tus datos y nos pondremos en contacto</h4>
-
-            <div class="row g-3">
-                <div class="col">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tu nombre"
-                        aria-label="First name" name="nombre">
-                </div>
-                <div class="col">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tu apellido"
-                        aria-label="Last name" name="apellido">
-                </div>
-            </div>
-
-            <label for="email" class="form-label">Tu Correo</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre@ejemplo.com"
-                name="email">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tu nombre" aria-label="First name" name="nombre">
         </div>
-        <div class="mb-3" style="margin-left: 10px;">
+
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tu apellido" aria-label="Last name" name="apellido">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Tu Correo</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre@ejemplo.com" name="email">
+        </div>
+
+        <div class="mb-3">
             <label for="mensaje" class="form-label">Mensaje</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="mensaje"></textarea>
         </div>
+
         <button type="submit" class="btn btn-primary mb-3" style="margin-left: 10px;">Enviar</button>
         <h3 style="justify-content: center;">{{message}}</h3>
-    </form> <!-- acá termina el formulario -->
+    </form>
 
-    <div class="col-lg-4 col-md-6 col-sm-12">
+    <!-- Div del gif -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
         <img src="/images/214388.gif" alt="" style="width: 100%; height: 100%;">
-
     </div>
 
-    <!-- acá empieza el mapa -->
-
-    <div id="mapita" class="col-lg-4 col-md-12 col-sm-12 scroll-section">
+    <!-- Div del mapa -->
+    <div id="mapita" class="col-lg-4 col-md-12 col-sm-12 scroll-section" style="background-color: rgb(142, 83, 83);">
         <h1>Ubicacion</h1>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2607.2280032744125!2d-58.50351797512972!3d-34.58136484103359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb64c098b0e67%3A0x4f28c3a2b8ffefe4!2sVilla%20Pueyrred%C3%B3n%2C%20CABA%2C%20Argentina!5e0!3m2!1ses!2sdk!4v1705339198512!5m2!1ses!2sdk"
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2607.2280032744125!2d-58.50351797512972!3d-34.58136484103359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb64c098b0e67%3A0x4f28c3a2b8ffefe4!2sVilla%20Pueyrred%C3%B3n%2C%20CABA%2C%20Argentina!5e0!3m2!1ses!2sdk!4v1705339198512!5m2!1ses!2sdk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
 
-    </div> <!-- acá termina el mapa -->
 
-</div> <!-- acá termina el div contactanos y ubicacion-->
+
+
 
 
 

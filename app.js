@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
+const fileUpload = require('express-fileupload');
 
 
 require('dotenv').config();
@@ -49,6 +50,11 @@ secured = async (req, res, next) => {
   }
 }
 
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/'
+}));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
@@ -57,39 +63,6 @@ app.use('/admin/login', loginRouter);
 app.use('/torneo', torneoRouter);
 app.use('/novedades', novedadesRouter);
 app.use('/admin/listado', secured, adminRouter);
-
-
-
-// app.get('/', function(req, res) {
-//  if (req.session.nombre) {
-//    res.send('Hola ' + req.session.nombre) ;
-//  } else {
-//    res.send('Hola usuario desconocido.');
-//  }
-// });  
-
-// app.get('/', function(req, res) {
-// var conocido = Boolean(req.session.nombre);
-
-//  res.render('index', {
-//    title: 'Sesiones en Express.js',
-//    conocido: conocido,
-//    nombre: req.session.nombre
-//  });
-// });
-
-//app.post('/ingresar', function (req, res) {
-// if (req.body.nombre) {
-//   req.session.nombre = req.body.nombre
-// }
-// res.redirect('/');
-// });
-
-// app.get('/salir', function (req, res){
-// req.session.destroy();
-// res.redirect('/');
-// });
-
 
 
 // catch 404 and forward to error handler
