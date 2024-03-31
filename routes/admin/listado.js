@@ -10,7 +10,14 @@ const destroy = util.promisify(cloudinary.uploader.destroy);
 
 router.get('/', async function (req, res, next) {
 
-    var listado = await listadoModel.getListado();
+    // var listado = await listadoModel.getListado();
+
+    var listado 
+    if (req.query.q === undefined) {
+        listado = await listadoModel.getListado();
+    } else {
+        listado = await listadoModel.buscarNovedades(req.query.q);
+    }
 
     listado = listado.map(novedad => {
         if (novedad.img_id) {
@@ -34,7 +41,9 @@ router.get('/', async function (req, res, next) {
     res.render('admin/listado', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
-        listado
+        listado,
+        is_search: req.query.q !== undefined,
+        q: req.query.q
     });
 });
 

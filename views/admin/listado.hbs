@@ -1,27 +1,44 @@
 <div class="container" style="margin-top: 100px;">
-    <div class="row">
-        <div class="col">
+    <div class="row justify-content-end">
+        <div class="col-auto">
             <p class="text-center">
                 <span>Hola {{usuario}}!</span>
-                <a href="/admin/login/logout" class="btn btn-danger">Cerrar sesión <i
-                        class="fas fa-sign-out-alt"></i></a>
-
             </p>
-
+        </div>
+        <div class="col-auto">
+            <a href="/admin/login/logout" class="btn btn-danger">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
 
-    {{!-- inicio fila 2 --}}
+    <div class="row justify-content-end">
+        <div class="col-auto ml-auto"> <!-- Utilizamos ml-auto para empujar el botón a la derecha -->
+            <a href="/admin/listado/agregar" class="btn btn-success mb-2"><i class="fas fa-plus"></i> Nueva novedad</a>
+        </div>
+    </div>
+
+    <div class="row justify-content-end">
+        <div class="col-5 text-right">
+            <form class="form-inline" action="/admin/listado" method="get">
+                <div class="input-group">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" name="q" {{#if q}} value="{{q}}" {{/if}}>
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <div class="row">
-        <div class="col-7" style="margin-top: -9px;">
-            <h2>Listado de novedades</h2>
-        </div>
-        <div class="col-5 text-right">
-            <a href="/admin/listado/agregar" class="btn btn-success"><i class="fas fa-plus"></i>Nuevo</a>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-7">
+                    <h2>Listado de novedades</h2>
+                </div>
+    
+            </div>
         </div>
     </div>
-    {{!-- fin fila 2 --}}
 
     <div class="row">
         <div class="col">
@@ -34,7 +51,6 @@
                         <th scope="col" class="text-center">Acciones</th>
                     </tr>
                 </thead>
-                
                 <tbody>
                     {{#each listado}}
                     <tr>
@@ -42,22 +58,21 @@
                         <td>{{titulo}}</td>
                         <td>{{{imagen}}}</td>
                         <td class="text-center">
-                            <a href="/admin/listado/modificar/{{id}}"  title="Editar" class="btn btn-sm btn-secondary">
-                                <i class="fa fa-pencil"></i></a>
-                            <a href="/admin/listado/eliminar/{{id}}" title="Eliminar" class="btn btn-sm btn-secondary">
-                                <i class="fa fa-trash"></i></a>
+                            <a href="/admin/listado/modificar/{{id}}" title="Editar" class="btn btn-sm btn-secondary"><i
+                                    class="fa fa-pencil"></i></a>
+                            <a href="/admin/listado/eliminar/{{id}}" title="Eliminar"
+                                class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     {{/each}}
                 </tbody>
-
             </table>
+            {{#if is_search}}
+                {{#unless listado.length}}
+                   <p>No se encontraron resultados para "<b>{{q}}</b>"</p> 
+                {{/unless}}
+            {{/if}}
+
         </div>
     </div>
-
-
-
-
-
-
 </div>

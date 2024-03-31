@@ -43,5 +43,14 @@ async function modificarNovedadById(obj, id) {
     
 }
 
+async function buscarNovedades(busqueda) {
+    var query = "select * from listado where titulo like ? OR subtitulo like ? OR cuerpo like ? ";
+    var rows = await pool.query(query,['%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%']);
+    return rows;
+}
 
-module.exports = { getListado, deleteNovedadById, insertNovedad, getNovedadById, modificarNovedadById }
+
+
+
+
+module.exports = { getListado, deleteNovedadById, insertNovedad, getNovedadById, modificarNovedadById, buscarNovedades }
